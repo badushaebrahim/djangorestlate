@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from rest_framework.authtoken import views
+from account.views import CustomAuthToken
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('apia/', views.obtain_auth_token),
+     path('apim/', CustomAuthToken.as_view()),
 ]
